@@ -49,5 +49,15 @@ select round(abs(max(lat_n)-min(lat_n) + abs(max(long_w)-min(long_w))) ,4) from 
 -- Aggregation Weather Observation Station 19
 select round(sqrt(power((min(lat_n) - max(lat_n)),2) + power((min(long_w) - max(long_w)),2)),4) from station;
 
--- 
+-- Basic JoinPopulation Census
+select sum(city.population) from city join country on city.CountryCode=country.code where country.continent='asia';
+
+-- Basic Join African Cities
+select city.name from city join country on CITY.CountryCode = COUNTRY.Code where country.continent = 'Africa';
+
+-- Basic Join Average Population of Each Continent
+select country.continent, floor(avg(city.population)) from city join country on city.countrycode = country.code group by country.continent;
+
+
+
 
