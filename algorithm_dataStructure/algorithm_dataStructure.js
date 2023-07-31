@@ -15,3 +15,16 @@ function plusMinus(arr) {
     zeroRatio.toFixed(6)
   );
 }
+
+// Mini-Max Sum
+function miniMaxSum(arr) {
+  const sortedArr = arr.sort((a, b) => a - b);
+  const greatestSum = sortedArr
+    .slice(1)
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+  const smallestSum = sortedArr
+    .slice(0, 4)
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+  console.log(smallestSum + " " + greatestSum);
+}
