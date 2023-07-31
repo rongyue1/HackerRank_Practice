@@ -28,3 +28,19 @@ function miniMaxSum(arr) {
 
   console.log(smallestSum + " " + greatestSum);
 }
+
+// Time Conversion
+function timeConversion(s) {
+  const modifier = s.slice(8, 10);
+  const time = s.slice(0, 8);
+  let [hours, minutes, seconds] = time.split(":");
+  if (hours === "12" && modifier === "AM") {
+    hours = "00";
+  } else if (modifier === "PM" && hours !== "12") {
+    hours = parseInt(hours) + 12;
+  }
+
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+//
