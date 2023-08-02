@@ -43,4 +43,33 @@ function timeConversion(s) {
   return `${hours}:${minutes}:${seconds}`;
 }
 
-//
+// Given encoded numbers (reversed and encoded by ASCII), decode it and print the value
+function decode(encoded) {
+  // reverse the numbers
+  let reversedCode = encoded.split("").reverse().join("");
+  let numArray = [];
+  let stringArr = [];
+  // split numbers into pairs and add them in an array.
+  while (reversedCode.length > 1) {
+    // if number start with 1, split three numbers in a pair.
+    if (reversedCode[0] == 1) {
+      let numPair = reversedCode.slice(0, 3);
+      numArray.push(numPair);
+      reversedCode = reversedCode.slice(3);
+    } else {
+      // if number start with other number, split two numbers in a pair.
+      let numPair = reversedCode.slice(0, 2);
+      numArray.push(numPair);
+      reversedCode = reversedCode.slice(2);
+    }
+  }
+  numArray.map((pair) => stringArr.push(String.fromCharCode(pair)));
+  let decodedStr = stringArr.join("");
+
+  console.log(decodedStr);
+
+  // use String.fromCharCode() to decode each pair of numbers and push them to a string e.g let text3 = text1.concat(" ", text2);
+  // console.log(String.fromCharCode(32));
+}
+
+decode("5117011011011741111120151170110110117");
