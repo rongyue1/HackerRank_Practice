@@ -63,13 +63,20 @@ function decode(encoded) {
       reversedCode = reversedCode.slice(2);
     }
   }
+  // use String.fromCharCode() to decode each pair of numbers
   numArray.map((pair) => stringArr.push(String.fromCharCode(pair)));
   let decodedStr = stringArr.join("");
 
   console.log(decodedStr);
-
-  // use String.fromCharCode() to decode each pair of numbers and push them to a string e.g let text3 = text1.concat(" ", text2);
-  // console.log(String.fromCharCode(32));
 }
+// decode("5117011011011741111120151170110110117");
 
-decode("5117011011011741111120151170110110117");
+// Find meidian number
+let arr = [5, 2, 3, 1, 4];
+function findMedian(arr) {
+  let sortedArr = arr.sort();
+  let arrLength = arr.length;
+  let index = Math.floor(arrLength / 2);
+  console.log(sortedArr[index]);
+}
+// findMedian(arr);
