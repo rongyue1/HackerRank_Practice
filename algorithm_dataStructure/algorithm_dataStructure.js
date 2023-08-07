@@ -98,8 +98,15 @@ function lonelyinteger(arr) {
       console.log(num);
     }
   }
-
-  // If no element occurred only once, return null or appropriate value
-  // return null;
 }
 // lonelyinteger([1, 22, 3, 3, 4, 4, 5, 1, 22]);
+
+// Simple Array Sum
+function simpleArraySum(ar) {
+  // Write your code here
+  let sum = 0;
+  for (let num of ar) {
+    sum += num;
+  }
+  return sum;
+}
