@@ -80,3 +80,26 @@ function findMedian(arr) {
   console.log(sortedArr[index]);
 }
 // findMedian(arr);
+
+// find unique element that only occurred once
+function lonelyinteger(arr) {
+  // let x = a.filter((num) => a.count(num) === 1);
+  // console.log(x);
+  const occurrences = {};
+
+  // Count occurrences of each element in the array
+  for (const num of arr) {
+    occurrences[num] = (occurrences[num] || 0) + 1;
+  }
+
+  // Find the element that occurred only once
+  for (const num of arr) {
+    if (occurrences[num] === 1) {
+      console.log(num);
+    }
+  }
+
+  // If no element occurred only once, return null or appropriate value
+  // return null;
+}
+// lonelyinteger([1, 22, 3, 3, 4, 4, 5, 1, 22]);
